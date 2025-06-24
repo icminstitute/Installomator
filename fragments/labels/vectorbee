@@ -1,0 +1,14 @@
+vectorbee)
+    # credit Cedric GAIN (@cedricgain)
+    name="VectorBee"
+    type="dmg"
+    if [[ "$(arch)" == "arm64" ]]; then
+        key="mac-arm64"
+    elif [[ $(arch) == "i386" ]]; then
+        key="mac"
+    fi
+    downloadURL=$(curl -s "https://www.vectorbee.com/api/v1/get-download-list/" | \
+        tr ',' '\n' | awk -F '"' -v k="$key" '$2 == k { print $4 }')
+    appName="VectorBee.app"
+    expectedTeamID="KSJY7J3252"
+    ;;
