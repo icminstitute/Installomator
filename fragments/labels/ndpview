@@ -1,0 +1,11 @@
+ndpview)
+    # credit : Cedric GAIN (@cedricgain)
+    name="NDPView2"
+    type="appInDmgInZip"
+    downloadURL="https://www.hamamatsu.com/content/dam/hamamatsu-photonics/sites/static/sys/en/download/NDP.view%202.9.29%20RUO.zip"
+    # appNewVersion="$(echo $downloadURL | grep -o -E '[0-9]+\.[0-9]+\.[0-9]+')"
+    appNewVersion=$(curl -s "https://www.hamamatsu.com/eu/en/product/life-science-and-medical-systems/digital-slide-scanner/U12388-01.html" | \ grep -Eo 'Download for Mac OS \(Ver\. [0-9]+\.[0-9]+\.[0-9]+' | \ head -1 | \ sed -E 's/.*Ver\. ([0-9]+\.[0-9]+\.[0-9]+).*/\1/')
+    expectedTeamID="62E2W7U9A6"
+    appName="NDP.view 2.app"
+    # appName="NDP.view $(echo "$appNewVersion" | cut -d. -f1).app"
+    ;;
