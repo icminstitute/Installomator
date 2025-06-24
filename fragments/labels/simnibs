@@ -1,0 +1,9 @@
+simnibs)
+    # credit : Cedric GAIN (@cedricgain)
+    name="SimNIBS"
+    type="pkg"
+    # packageID="org.SimNIBS.4.5.0"
+    downloadURL="$(downloadURLFromGit simnibs simnibs)"
+    appNewVersion="$(versionFromGit simnibs simnibs)"
+    expectedTeamID="8J5V4KS7H4"
+    ;;
