@@ -1,0 +1,14 @@
+virtualbox)
+    # credit: Cedric GAIN (@cedricgain)
+    name="VirtualBox"
+    type="pkgInDmg"
+    if [[ $(arch) == "arm64" ]]; then
+        downloadURL=$(curl -fs "https://www.virtualbox.org/wiki/Downloads"  | awk -F '"' "/macOSArm64.dmg/ { print \$4 }")
+        appNewVersion=$(curl -fs "https://www.virtualbox.org/wiki/Downloads" | awk -F '"' "/macOSArm64.dmg/ { print \$4 }" | sed -E 's/.*virtualbox\/([0-9.]*)\/.*/\1/')
+    elif [[ $(arch) == "i386" ]]; then
+        downloadURL=$(curl -fs "https://www.virtualbox.org/wiki/Downloads"  | awk -F '"' "/OSX.dmg/ { print \$4 }")
+        appNewVersion=$(curl -fs "https://www.virtualbox.org/wiki/Downloads" | awk -F '"' "/OSX.dmg/ { print \$4 }" | sed -E 's/.*virtualbox\/([0-9.]*)\/.*/\1/')
+    fi
+    pkgName="VirtualBox.pkg"
+    expectedTeamID="VB5E2TV963"
+    ;;
