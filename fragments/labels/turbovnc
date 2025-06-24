@@ -1,0 +1,8 @@
+turbovnc)
+    # credit: Cedric GAIN (@cedricgain)
+    name="TurboVNC"
+    type="pkgInDmg"
+    downloadURL="$(downloadURLFromGit TurboVNC turbovnc)"
+    appNewVersion="$(versionFromGit TurboVNC turbovnc)"
+    expectedTeamID="LG36Y2V34X"
+    ;;
